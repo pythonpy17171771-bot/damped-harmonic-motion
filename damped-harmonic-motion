@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>감쇠 조화 운동 증명</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    background:#0f172a;
+    color:white;
+    font-family:Arial, sans-serif;
+    line-height:1.8;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    font-size:50px;
+    color:#38bdf8;
+    margin-bottom:60px;
+}
+
+.section{
+    background:#111827;
+    padding:35px;
+    border-radius:20px;
+    margin-bottom:40px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+h2{
+    color:#60a5fa;
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:22px;
+    color:#e2e8f0;
+}
+
+.formula{
+    text-align:center;
+    font-size:38px;
+    color:#f472b6;
+    margin:35px 0;
+    font-weight:bold;
+}
+
+.highlight{
+    color:#facc15;
+    font-weight:bold;
+}
+
+.canvas-box{
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+canvas{
+    background:#1e293b;
+    border-radius:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>단순 감쇠 조화 운동 증명</h1>
+
+<!-- 1 -->
+
+<div class="section">
+
+<h2>1. 감쇠 조화 운동이란?</h2>
+
+<p>
+감쇠 조화 운동은 진동하면서 시간이 지날수록
+진폭이 점점 감소하는 운동이다.
+</p>
+
+<p>
+공기 저항이나 마찰 때문에 에너지가 줄어들어
+결국 운동이 멈추게 된다.
+</p>
+
+<div class="canvas-box">
+<canvas id="graph1" width="700" height="250"></canvas>
+</div>
+
+</div>
+
+<!-- 2 -->
+
+<div class="section">
+
+<h2>2. 작용하는 힘</h2>
+
+<p>
+물체에는 두 가지 힘이 작용한다.
+</p>
+
+<p>
+1. 원래 위치로 돌아가게 하는 용수철 힘
+</p>
+
+<div class="formula">
+F = -kx
+</div>
+
+<p>
+2. 움직임을 방해하는 마찰력
+</p>
+
+<div class="formula">
+F = -bv
+</div>
+
+<p>
+속도가 빠를수록 마찰력이 커진다.
+</p>
+
+</div>
+
+<!-- 3 -->
+
+<div class="section">
+
+<h2>3. 뉴턴의 운동 법칙 적용</h2>
+
+<p>
+뉴턴의 운동 법칙:
+</p>
+
+<div class="formula">
+F = ma
+</div>
+
+<p>
+전체 힘을 모두 합하면:
+</p>
+
+<div class="formula">
+m d²x/dt² = -b dx/dt - kx
+</div>
+
+<p>
+모든 항을 왼쪽으로 이동하면:
+</p>
+
+<div class="formula">
+m d²x/dt² + b dx/dt + kx = 0
+</div>
+
+<p>
+이 식이 감쇠 조화 운동의 기본 미분방정식이다.
+</p>
+
+</div>
+
+<!-- 4 -->
+
+<div class="section">
+
+<h2>4. 지수함수 형태 가정</h2>
+
+<p>
+미분해도 형태가 유지되는 지수함수를 이용한다.
+</p>
+
+<div class="formula">
+x = Ae<sup>rt</sup>
+</div>
+
+<p>
+미분하면:
+</p>
+
+<div class="formula">
+dx/dt = Are<sup>rt</sup>
+</div>
+
+<div class="formula">
+d²x/dt² = Ar²e<sup>rt</sup>
+</div>
+
+</div>
+
+<!-- 5 -->
+
+<div class="section">
+
+<h2>5. 이차방정식으로 변환</h2>
+
+<p>
+원래 식에 대입하면:
+</p>
+
+<div class="formula">
+mAr²e<sup>rt</sup> + bAre<sup>rt</sup> + kAe<sup>rt</sup> = 0
+</div>
+
+<p>
+e<sup>rt</sup> 는 0이 될 수 없으므로:
+</p>
+
+<div class="formula">
+mr² + br + k = 0
+</div>
+
+<p>
+즉,
+<span class="highlight">
+2차 미분방정식이 이차방정식으로 바뀐다.
+</span>
+</p>
+
+</div>
+
+<!-- 6 -->
+<!-- 6 -->
+
+<div class="section">
+
+<h2>6. 왜 b²-4mk 가 음수인가?</h2>
+
+<p>
+특성방정식:
+</p>
+
+<div class="formula">
+mr²+br+k=0
+</div>
+
+<p>
+근의 공식:
+</p>
+
+<div class="formula">
+r=(-b±√(b²-4mk))/2m
+</div>
+
+<p>
+여기서 판별식:
+</p>
+
+<div class="formula">
+b²-4mk
+</div>
+
+<p>
+의 부호에 따라 운동 형태가 달라진다.
+</p>
+
+<p>
+감쇠 조화 운동은
+<span class="highlight">
+“진동하면서”
+</span>
+감소하는 운동이어야 한다.
+</p>
+
+<div class="canvas-box">
+<canvas id="compareGraph" width="900" height="400"></canvas>
+</div>
+
+<p>
+만약:
+</p>
+
+<div class="formula">
+b²-4mk &gt; 0
+</div>
+
+<p>
+이면 근은 서로 다른 두 실수가 된다.
+</p>
+
+<div class="formula">
+r₁,r₂ ∈ 실수
+</div>
+
+<p>
+그러면 해:
+</p>
+
+<div class="formula">
+x(t)=Ae^{r₁t}+Be^{r₂t}
+</div>
+
+<p>
+는 단순히 증가하거나 감소할 뿐,
+사인·코사인 형태의 반복 진동이 나타나지 않는다.
+</p>
+
+<p>
+즉,
+진동 운동이 아니라 그냥 천천히 원위치로 돌아가는 운동이 된다.
+</p>
+
+<hr style="margin:40px 0;border:1px solid #334155;">
+
+<p>
+반대로:
+</p>
+
+<div class="formula">
+b²-4mk&lt;0
+</div>
+
+<p>
+이면 음수의 제곱근 때문에 복소수가 등장한다.
+</p>
+
+<div class="formula">
+r=α±iω
+</div>
+
+<p>
+오일러 공식:
+</p>
+
+<div class="formula">
+e^{iθ}=cosθ+isinθ
+</div>
+
+<p>
+을 사용하면
+사인·코사인 진동이 나타난다.
+</p>
+
+<div class="formula">
+x(t)=Ae^{-bt/2m}cos(ωt+φ)
+</div>
+
+<p>
+즉,
+<span class="highlight">
+진동이 존재하려면 복소근이 필요하고,
+복소근이 존재하려면 판별식이 음수여야 한다.
+</span>
+</p>
+
+<p>
+따라서 감쇠 조화 운동에서는:
+</p>
+
+<div class="formula">
+b²-4mk&lt;0
+</div>
+
+<p>
+이어야 한다.
+</p>
+
+</div>
+
+<script>
+
+const canvas=document.getElementById("compareGraph");
+const ctx=canvas.getContext("2d");
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+// 배경선
+
+ctx.beginPath();
+ctx.moveTo(50,200);
+ctx.lineTo(850,200);
+
+ctx.strokeStyle="#64748b";
+ctx.lineWidth=1;
+ctx.stroke();
+
+// 왼쪽 설명
+
+ctx.fillStyle="white";
+ctx.font="22px Arial";
+ctx.fillText("판별식 > 0 : 진동 없음",90,40);
+
+ctx.fillText("판별식 < 0 : 감쇠 진동",520,40);
+
+// 왼쪽 그래프 (비진동)
+
+ctx.beginPath();
+
+for(let i=0;i<300;i++){
+
+    let x=70+i;
+
+    let y=
+    120*Math.exp(-0.015*i);
+
+    let graphY=200-y;
+
+    if(i===0){
+        ctx.moveTo(x,graphY);
+    }
+    else{
+        ctx.lineTo(x,graphY);
+    }
+}
+
+ctx.strokeStyle="#f87171";
+ctx.lineWidth=4;
+ctx.stroke();
+
+// 오른쪽 그래프 (감쇠 진동)
+
+ctx.beginPath();
+
+for(let i=0;i<300;i++){
+
+    let x=470+i;
+
+    let y=
+    100*Math.exp(-0.01*i)
+    *
+    Math.cos(0.12*i);
+
+    let graphY=200+y;
+
+    if(i===0){
+        ctx.moveTo(x,graphY);
+    }
+    else{
+        ctx.lineTo(x,graphY);
+    }
+}
+
+ctx.strokeStyle="#38bdf8";
+ctx.lineWidth=4;
+ctx.stroke();
+
+</script>
+<div class="section">
+
+<h2>7. 복소수의 등장</h2>
+
+<p>
+판별식이 음수가 되면:
+</p>
+
+<div class="formula">
+b² - 4mk &lt; 0
+</div>
+
+<p>
+복소근이 등장한다.
+</p>
+
+<div class="formula">
+r = α ± iω
+</div>
+
+<p>
+오일러 공식을 이용하면:
+</p>
+
+<div class="formula">
+e<sup>iθ</sup> = cosθ + isinθ
+</div>
+
+<p>
+복소수가 사인·코사인 진동으로 연결된다.
+</p>
+
+</div>
+
+<!-- 7 -->
+
+<div class="section">
+
+<h2>8. 최종 결과</h2>
+
+<div class="formula">
+x(t)=Ae<sup>-bt</sup>cos(ωt+φ)
+</div>
+
+<p>
+시간이 지날수록 진폭이 감소하면서
+계속 진동하는 운동이 나타난다.
+</p>
+
+<div class="canvas-box">
+<canvas id="graph2" width="700" height="250"></canvas>
+</div>
+
+<p>
+이를 통해 복소수가 실제 자연의 진동 운동을
+설명하는 데 사용된다는 것을 알 수 있다.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function drawDampedGraph(canvasId){
+
+    const canvas=document.getElementById(canvasId);
+    const ctx=canvas.getContext("2d");
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.beginPath();
+
+    for(let i=0;i<600;i++){
+
+        let x=i+50;
+
+        let y=
+        90*Math.exp(-0.004*i)
+        *Math.cos(0.07*i);
+
+        let graphY=125+y;
+
+        if(i===0){
+            ctx.moveTo(x,graphY);
+        }
+        else{
+            ctx.lineTo(x,graphY);
+        }
+    }
+
+    ctx.strokeStyle="#38bdf8";
+    ctx.lineWidth=3;
+    ctx.stroke();
+
+    // 중심선
+
+    ctx.beginPath();
+    ctx.moveTo(40,125);
+    ctx.lineTo(660,125);
+
+    ctx.strokeStyle="#64748b";
+    ctx.lineWidth=1;
+    ctx.stroke();
+}
+
+drawDampedGraph("graph1");
+drawDampedGraph("graph2");
+
+</script>
+
+</body>
+</html>
